@@ -20,6 +20,7 @@ namespace Aulas
         private void BtnLogar_Clicked(object sender, EventArgs e)
         {
            this.Navigation.PushAsync(new Home());
+
         }
     }
 }
