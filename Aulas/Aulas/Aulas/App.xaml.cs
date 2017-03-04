@@ -14,7 +14,7 @@ namespace Aulas
 		{
 			InitializeComponent();
 
-            MainPage = new NavigationPage(new login());
+            MainPage = new NavigationPage(new PrimeiraPagina());
 		}
 
 		protected override void OnStart ()

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Aulas.PrimeiraPagina" Padding="10">
+    <StackLayout >
+        <Entry Text="{Binding PrimeiroNumero}" 
+                Keyboard="Numeric" Placeholder="Primeiro Número"/>
+        <Entry  Text="{Binding SegundoNumero}"
+                Keyboard="Numeric" Placeholder="Segundo Número"/>
+        <Label Text="{Binding Resultado}"/>
+        <Button Text="Somar" Command="{Binding SomarCommand}"/>
+        <ListView ItemsSource="{Binding Historico}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                           </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                             </Grid.RowDefinitions>
+                            <Label Grid.Row="0" Grid.Column="0"
+                                   Text="{Binding PrimeiroNumero}"/>
+                            <Label Grid.Row="0" Grid.Column="1"
+                                   Text="{Binding SegundoNumero}"/>
+                            <Label Grid.Row="1" Grid.Column="0"
+                                   FontAttributes="Bold"
+                                   Grid.ColumnSpan="2" Text="{Binding Resultado}"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </StackLayout>
+</ContentPage>
